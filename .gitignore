@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/GithubAction/.vs/GithubAction
+/GithubAction/DWH_Staging/Import Schema Logs
+/.vs
+/GithubAction/DWH_Staging/obj/Debug
+/GithubAction/DWH_Staging/DWH_Staging.jfm
+/GithubAction/DWH_Staging/DWH_Staging.sqlproj
+/GithubAction/DWH_Staging/DWH_Staging.sqlproj.user
