@@ -9,3 +9,9 @@
 /GithubAction/DWH_Staging/DWH_Staging.jfm
 /GithubAction/DWH_Staging/DWH_Staging.sqlproj
 /GithubAction/DWH_Staging/DWH_Staging.sqlproj.user
+/GithubAction/DWH_ETL/bin/Debug
+/GithubAction/DWH_ETL/Import Schema Logs
+/GithubAction/DWH_ETL/obj/Debug
+/GithubAction/DWH_ETL/DWH_ETL.sqlproj
+/GithubAction/DWH_ETL/DWH_ETL.sqlproj.user
+/GithubAction/DWH_Staging/bin/Debug
