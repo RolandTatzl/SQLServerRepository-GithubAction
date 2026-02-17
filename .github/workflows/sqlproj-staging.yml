@@ -17,11 +17,11 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Build
-      run: dotnet build ..\..\GithubAction\DWH_Staging\DWH_Staging.sqlproj
+      run: dotnet build ../../GithubAction/DWH_Staging/DWH_Staging.sqlproj
 
     - name: Deploy
       uses: azure/sql-action@v2
       with:
         connection-string: ${{ secrets.SQL_CONNECTION_STRING }}
         action: 'publish'
-        path: '..\..\GithubAction\DWH_Staging\bin\Debug\DWH_Staging.dacpac'
+        path: '../../GithubAction/DWH_Staging/bin/Debug/DWH_Staging.dacpac'
