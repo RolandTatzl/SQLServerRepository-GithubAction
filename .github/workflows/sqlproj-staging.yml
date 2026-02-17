@@ -1,4 +1,4 @@
-name: sqlproj-sample
+name: sqlproj-staging
 
 on:
   push:
