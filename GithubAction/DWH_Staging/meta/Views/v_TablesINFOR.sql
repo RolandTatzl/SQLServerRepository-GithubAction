@@ -1,14 +1,19 @@
 ﻿CREATE VIEW [meta].[v_TablesINFOR] AS 
-SELECT [tabinID]
-      ,[tabin_SchemaSOURCE]
-      ,[tabin_TableNameSOURCE]
-      ,[tabin_Active]
-      ,[tabin_TableLoadPRIORITY]
-      ,[tabin_serv_ClientID]
-      ,[tabin_BusinessCompanyNumber]
-      ,[tabin_bcnr_BCNRange]
-      ,[tabin_TableNameTARGET]
-      ,[tabin_TableCommonName]
-      ,[tabin_IncrementDays]
-      ,[tabin_IncrementColumn]
-  FROM [DWH_Staging_DEV].[meta].[TablesINFOR]
+SELECT ti.[tabinID]
+      ,ti.[tabin_SchemaSOURCE]
+      ,ti.[tabin_TableNameSOURCE]
+      ,ti.[tabin_Active]
+      ,ti.[tabin_TableLoadPRIORITY]
+      ,ti.[tabin_serv_ClientID]
+      ,ti.[tabin_BusinessCompanyNumber]
+      ,ti.[tabin_bcnr_BCNRange]
+      ,ti.[tabin_TableNameTARGET]
+      ,ti.[tabin_TableCommonName]
+      ,ti.[tabin_IncrementDays]
+      ,ti.[tabin_IncrementColumn]
+      ,lt.LoadTypeID
+      ,lt.LoadTypeName
+  FROM [meta].[TablesINFOR] ti
+  LEFT OUTER
+  JOIN [$(DWH_ETL)].etl.LoadType lt
+    ON lt.LoadTypeID = 100

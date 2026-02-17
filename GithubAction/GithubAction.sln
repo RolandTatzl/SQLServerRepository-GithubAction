@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36930.0 d17.14
+VisualStudioVersion = 17.14.36930.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DWH_Staging", "DWH_Staging\DWH_Staging.sqlproj", "{E5E76132-F82C-47F3-BA11-9E8199B775EE}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DWH_ETL", "DWH_ETL\DWH_ETL.sqlproj", "{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,12 @@ Global
 		{E5E76132-F82C-47F3-BA11-9E8199B775EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5E76132-F82C-47F3-BA11-9E8199B775EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E5E76132-F82C-47F3-BA11-9E8199B775EE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0356508-9CD4-473B-9CCA-7775FA2EEC7F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
