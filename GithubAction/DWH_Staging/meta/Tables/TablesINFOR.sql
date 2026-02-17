@@ -11,6 +11,7 @@
     [tabin_TableCommonName]       NVARCHAR (50) NULL,
     [tabin_IncrementDays]         SMALLINT      CONSTRAINT [DF_TablesINFOR_tabin_IncrementDays] DEFAULT ((0)) NOT NULL,
     [tabin_IncrementColumn]       NVARCHAR (10) NULL,
+    [load_date] NCHAR(10) NULL, 
     CONSTRAINT [PK_TablesINFOR] PRIMARY KEY CLUSTERED ([tabin_TableNameSOURCE] ASC) WITH (FILLFACTOR = 90)
 );
 
