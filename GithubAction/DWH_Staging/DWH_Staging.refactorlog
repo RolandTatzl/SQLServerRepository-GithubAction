@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="eeb53e1c-a4bf-4ca2-8102-208b1594b8a5" ChangeDateTime="02/17/2026 15:21:38">
+    <Property Name="ElementName" Value="[meta].[TablesINFOR].[load_date]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[meta].[TablesINFOR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="load_dat" />
+  </Operation>
+</Operations>
