@@ -18,3 +18,10 @@ jobs:
 
     - name: Build
       run: dotnet build DWH_Staging.sqlproj
+
+    - name: Deploy
+      uses: azure/sql-action@v2
+      with:
+        connection-string: ${{ secrets.SQL_CONNECTION_STRING }}
+        action: 'publish'
+        path: 'bin/Debug/DWH_Staging.dacpac'
