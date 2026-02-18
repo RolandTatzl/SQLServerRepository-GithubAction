@@ -31,7 +31,7 @@ jobs:
       - name: Publish DACPAC to SQL Server
         shell: pwsh
         run: |
-          $dacpac = Get-ChildItem -Recurse -Filter *.dacpac | Select-Object -First 1
+          $dacpac = Get-ChildItem -Recurse -Filter DWH_Staging.dacpac | Select-Object -First 1
           Write-Host "Publishing DACPAC: $($dacpac.FullName)"
 
           & "C:\Program Files\Microsoft SQL Server\160\DAC\bin\SqlPackage.exe" `
