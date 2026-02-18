@@ -1,4 +1,4 @@
-name: Build & Deploy SQL Project  DWH_Staging
+name: Build & Deploy SQL Project DWH_Staging
 
 on:
   push:
