@@ -25,26 +25,17 @@ jobs:
       - name: Build SQL Server project
         shell: pwsh
         run: |
-          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" `
-          ".\GithubAction\DWH_Staging\DWH_Staging.sqlproj" `
-          "/t:Clean;Build" `
-          /p:Configuration=Release `
-          /v:m `
-          "/bl:DWH_Staging.binlog" `
-          "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
-          "/p:SQLDBExtensionsRefPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
-          "/p:DacPacRootPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
-          
-          & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" `
-          ".\GithubAction\DWH_ETL\DWH_ETL.sqlproj" `
-          "/t:Clean;Build" `
-          /p:Configuration=Release `
-          /v:m `
-          "/bl:DWH_Staging.binlog" ``
-          "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
-          "/p:SQLDBExtensionsRefPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
-          "/p:DacPacRootPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
-
+          $MSBUILD = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+          $commonArgs = @(
+              "/t:Clean;Build",
+              "/p:Configuration=Release",
+              "/v:m",
+              "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\",
+              "/p:SQLDBExtensionsRefPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB",
+              "/p:DacPacRootPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
+            )
+          & $MSBUILD ".\GithubAction\DWH_ETL\DWH_ETL.sqlproj" @commonArgs
+          & $MSBUILD ".\GithubAction\DWH_Staging\DWH_Staging.sqlproj" @commonArgs
 
       - name: Find generated DACPAC (debug)
         shell: pwsh
