@@ -26,11 +26,19 @@ jobs:
         shell: pwsh
         run: |
           & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" `
-          "GithubAction\DWH_Staging\DWH_Staging.sqlproj" `
-          /t:Build `
-          /p:Configuration=Release
+          ".\GithubAction\DWH_Staging\DWH_Staging.sqlproj" `
+          /t:Build /p:Configuration=Release `
+          /p:VSINSTALLDIR="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
+          /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
+          /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
+          
           & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" `
-          "GithubAction\DWH_ETL\DWH_ETL.sqlproj" /t:Build /p:Configuration=Release
+          ".\GithubAction\DWH_ETL\DWH_ETL.sqlproj" `
+          /t:Build /p:Configuration=Release `
+          /p:VSINSTALLDIR="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
+          /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
+          /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
+
 
       - name: Find generated DACPAC (debug)
         shell: pwsh
