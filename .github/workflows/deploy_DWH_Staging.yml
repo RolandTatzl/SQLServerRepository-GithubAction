@@ -1,0 +1,42 @@
+name: Build & Deploy SQL Project DWH_Staging
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Locate SQL Projects (debug)
+        shell: pwsh
+        run: |
+          Write-Host "Searching for .sqlproj..."
+          Get-ChildItem -Recurse -Filter *.sqlproj
+
+      - name: Build SQL Server project
+        shell: pwsh
+        run: msbuild "\GithubAction\DWH_Staging\DWH_Staging.sqlproj" /t:Build /p:Configuration=Release
+
+      - name: Find generated DACPAC (debug)
+        shell: pwsh
+        run: Get-ChildItem -Recurse -Filter *.dacpac
+
+      - name: Publish DACPAC to SQL Server
+        shell: pwsh
+        run: |
+          $dacpac = Get-ChildItem -Recurse -Filter *.dacpac | Select-Object -First 1
+          Write-Host "Publishing DACPAC: $($dacpac.FullName)"
+
+          & "C:\Program Files\Microsoft SQL Server\160\DAC\bin\SqlPackage.exe" `
+            /Action:Publish `
+            /SourceFile:$dacpac.FullName `
+            /TargetConnectionString:"${{ secrets.SQL_CONNECTION_STRING }}" `
+            /OverwriteFiles:True `
+            /p:BlockOnPossibleDataLoss=False
