@@ -30,7 +30,9 @@
 
     <!-- expliziter SSDT-Pfad für VS2022 BUILD TOOLS -->
     <SSDTPath>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VisualStudio\v17.0\SSDT\</SSDTPath>
-    <DacPacRootPath>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\</DacPacRootPath>
+    <SQLDBExtensionsRefPath>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC</SQLDBExtensionsRefPath>
+    <!-- Viele Targets lesen DacPacRootPath; wir setzen ihn auf denselben Ort -->
+    <DacPacRootPath>$(SQLDBExtensionsRefPath)</DacPacRootPath>
 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
