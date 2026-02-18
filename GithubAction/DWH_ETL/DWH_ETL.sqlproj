@@ -27,9 +27,7 @@
     <!-- Wichtig: VS2022 Build Tools verwenden VERSION 17.0 -->
     <VisualStudioVersion>17.0</VisualStudioVersion>
     <!-- KORREKTER SSDT-PFAD für BuildTools -->
-    <SSDTPath>
-      C:\Program Files\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VisualStudio\v17.0\SSDT\
-    </SSDTPath>
+    <SSDTPath>C:\Program Files\Microsoft Visual Studio\2022\BuildTools\MSBuild\Microsoft\VisualStudio\v17.0\SSDT\</SSDTPath>
 
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
