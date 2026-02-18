@@ -31,7 +31,7 @@ jobs:
           /p:Configuration=Release `
           /v:m `
           "/bl:DWH_Staging.binlog" `
-          /p:VSINSTALLDIR="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
+          "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
           /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
           /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
           
@@ -41,7 +41,7 @@ jobs:
           /p:Configuration=Release `
           /v:m `
           "/bl:DWH_Staging.binlog" ``
-          /p:VSINSTALLDIR="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
+          "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
           /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
           /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
 
