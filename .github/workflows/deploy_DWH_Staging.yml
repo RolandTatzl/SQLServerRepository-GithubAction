@@ -1,7 +1,9 @@
 name: Build & Deploy SQL Project DWH_Staging
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
 
 jobs:
   build-and-deploy:
