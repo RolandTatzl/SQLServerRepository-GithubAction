@@ -24,7 +24,7 @@ jobs:
 
       - name: Build SQL Server project
         shell: pwsh
-        run: '"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" GithubAction\DWH_Staging\DWH_Staging.sqlproj /t:Build /p:Configuration=Release'
+        run: '"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" "GithubAction\DWH_Staging\DWH_Staging.sqlproj" /t:Build /p:Configuration=Release'
 
       - name: Find generated DACPAC (debug)
         shell: pwsh
