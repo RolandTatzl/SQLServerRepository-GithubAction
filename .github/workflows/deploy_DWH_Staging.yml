@@ -32,8 +32,8 @@ jobs:
           /v:m `
           "/bl:DWH_Staging.binlog" `
           "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
-          /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
-          /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
+          "/p:SQLDBExtensionsRefPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
+          "/p:DacPacRootPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
           
           & "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe" `
           ".\GithubAction\DWH_ETL\DWH_ETL.sqlproj" `
@@ -42,8 +42,8 @@ jobs:
           /v:m `
           "/bl:DWH_Staging.binlog" ``
           "/p:VSINSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\" `
-          /p:SQLDBExtensionsRefPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
-          /p:DacPacRootPath="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
+          "/p:SQLDBExtensionsRefPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB" `
+          "/p:DacPacRootPath=C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC"
 
 
       - name: Find generated DACPAC (debug)
