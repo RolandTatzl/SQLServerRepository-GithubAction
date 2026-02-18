@@ -22,7 +22,7 @@ jobs:
 
       - name: Build SQL Server project
         shell: pwsh
-        run: msbuild "\GithubAction\DWH_Staging\DWH_Staging.sqlproj" /t:Build /p:Configuration=Release
+        run: msbuild "GithubAction\DWH_Staging\DWH_Staging.sqlproj" /t:Build /p:Configuration=Release
 
       - name: Find generated DACPAC (debug)
         shell: pwsh
